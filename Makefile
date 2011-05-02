@@ -1,9 +1,12 @@
 CC = gcc
-#CFLAGS = -std=gnu99 `pkg-config --libs sndfile` `pkg-config  --libs fftw3`
-CFLAGS = -std=c99 -lm -lreadline 
+CFLAGS = -std=c99 -lm -lreadline -Wall
 
-simplex: simplex.c matrix.o
-	$(CC) $(CFLAGS) -o simplex simplex.c matrix.o
+.PHONY: simplex
+
+all: simplex
+
+simplex: simplex.c matrix.c
+	$(CC) $(CFLAGS) -o simplex simplex.c matrix.c
 
 clean:
 	rm -rf simplex *.o
