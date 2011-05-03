@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=c99 -lm -lreadline -Wall
+CFLAGS = -O2 -std=c99 -lm -lreadline -Wall
 
 .PHONY: simplex
 
